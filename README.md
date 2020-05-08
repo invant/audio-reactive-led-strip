@@ -1,3 +1,4 @@
+#[![Run on Repl.it](https://repl.it/badge/github/scottlawsonbc/audio-reactive-led-strip)](https://repl.it/github/scottlawsonbc/audio-reactive-led-strip)
 # Audio Reactive LED Strip
 Real-time LED strip music visualization using Python and the ESP8266 or Raspberry Pi.
 
