@@ -23,7 +23,7 @@ The repository includes everything needed to build an LED strip music visualizer
 # What do I need to make one?
 ## Computer + ESP8266
 To build a visualizer using a computer and ESP8266, you will need:
-- Computer with Python 2.7 or 3.5 ([Anaconda](https://www.continuum.io/downloads) is recommended on Windows)
+- Computer with Python 3.6 strictly as new version doesn't support some of the dependencies, python needs to be installed to path to execute commands through powershell so better install python through Chocolatey. Installing python 3.6 through choco further explained.
 - ESP8266 module with RX1 pin exposed. These modules can be purchased for as little as $5 USD. These modules are known to be compatible, but many others will work too:
   - NodeMCU v3
   - Adafruit HUZZAH
@@ -48,14 +48,24 @@ Limitations when using the Raspberry Pi:
 - The ESP8266 uses a technique called temporal dithering to improve the color depth of the LED strip. Unfortunately the Raspberry Pi lacks this capability.
 
 # Installation for Computer + ESP8266
+## Installing Python 3.6
+ - First intall chocolatey by running following script in Powershelll(administrative mode) of Windows
+ With PowerShell, you must ensure Get-ExecutionPolicy is not Restricted. We suggest using Bypass to bypass the policy to get things installed or AllSigned for quite a bit more security.
+Run Get-ExecutionPolicy. If it returns Restricted, then run Set-ExecutionPolicy AllSigned or Set-ExecutionPolicy Bypass -Scope Process.
+    >> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+ - Install Python 3.6 through chocolatey run the following script in PowerShell 
+ >> choco install choco install python --version=3.6.3
+
 ## Python Dependencies
-Visualization code is compatible with Python 2.7 or 3.5. A few Python dependencies must also be installed:
+Visualization code is compatible with Python 3.6. A few Python dependencies must also be installed:
 - Numpy
 - Scipy (for digital signal processing)
 - PyQtGraph (for GUI visualization)
 - PyAudio (for recording audio with microphone)
 
 On Windows machines, the use of [Anaconda](https://www.continuum.io/downloads) is **highly recommended**. Anaconda simplifies the installation of Python dependencies, which is sometimes difficult on Windows.
+
 
 ### Installing dependencies with Anaconda
 Create a [conda virtual environment](http://conda.pydata.org/docs/using/envs.html) (this step is optional but recommended)
@@ -78,6 +88,20 @@ pip install pyqtgraph
 pip install pyaudio
 ```
 If `pip` is not found try using `python -m pip install` instead.
+Pyaudio package may fail so you can download the pyaudio directly to path C:\Users\YOUR_COMP\AppData\Local\Programs\Python\Python37-32 and open cmd there and run 
+>> pip install PyAudio-0.2.11-cp36-cp36m-win_amd64.whl
+
+Ensure all dependencies are installed by running the following command 
+>> pip list
+ This should return like this
+numpy (1.18.4)
+pip (9.0.1)
+PyAudio (0.2.11)
+PyQt5 (5.14.2)
+PyQt5-sip (12.7.2)
+pyqtgraph (0.10.0)
+scipy (1.4.1)
+setuptools (28.8.0)
 
 ## Arduino dependencies
 ESP8266 firmare is uploaded using the Arduino IDE. See [this tutorial](https://learn.sparkfun.com/tutorials/esp8266-thing-hookup-guide/installing-the-esp8266-arduino-addon) to setup the Arduino IDE for ESP8266.
