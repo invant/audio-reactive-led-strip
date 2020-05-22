@@ -49,14 +49,19 @@ Limitations when using the Raspberry Pi:
 
 # Installation for Computer + ESP8266
 ## Installing Python 3.6
- - First intall chocolatey by running following script in Powershell(admin) of Windows
+ - First intall chocolatey by running following script in Powershell(admin) of Windows.
+ ```
+ >>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) 
+ ```
+ 
  With PowerShell, you must ensure Get-ExecutionPolicy is not Restricted. We suggest using Bypass to bypass the policy to get things installed or AllSigned for quite a bit more security.
-
-Run Get-ExecutionPolicy. If it returns Restricted, then run Set-ExecutionPolicy AllSigned or Set-ExecutionPolicy Bypass -Scope Process.
-    >> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Run `Get-ExecutionPolicy` . If it returns Restricted, then run `Set-ExecutionPolicy AllSigned` or `Set-ExecutionPolicy Bypass -Scope Process`
+    
 
  - Install Python 3.6 through chocolatey run the following script in PowerShell 
+ ```
  >> choco install choco install python --version=3.6.3
+ ```
 
 ## Python Dependencies
 Visualization code is compatible with Python 3.6. A few Python dependencies must also be installed:
@@ -93,7 +98,8 @@ Pyaudio package may fail so you can download the pyaudio directly to path C:\Use
 >> pip install PyAudio-0.2.11-cp36-cp36m-win_amd64.whl  .
 
 Ensure all dependencies are installed by running >> pip list
-This should return like this  >>
+This should return like this:
+```
 numpy (1.18.4)
 pip (9.0.1)
 PyAudio (0.2.11)
@@ -102,6 +108,7 @@ PyQt5-sip (12.7.2)
 pyqtgraph (0.10.0)
 scipy (1.4.1)
 setuptools (28.8.0)
+```
 
 ## Arduino dependencies
 ESP8266 firmare is uploaded using the Arduino IDE. See [this tutorial](https://learn.sparkfun.com/tutorials/esp8266-thing-hookup-guide/installing-the-esp8266-arduino-addon) to setup the Arduino IDE for ESP8266.
