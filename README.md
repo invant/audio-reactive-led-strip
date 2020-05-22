@@ -49,8 +49,9 @@ Limitations when using the Raspberry Pi:
 
 # Installation for Computer + ESP8266
 ## Installing Python 3.6
- - First intall chocolatey by running following script in Powershelll(administrative mode) of Windows
+ - First intall chocolatey by running following script in Powershell(admin) of Windows
  With PowerShell, you must ensure Get-ExecutionPolicy is not Restricted. We suggest using Bypass to bypass the policy to get things installed or AllSigned for quite a bit more security.
+
 Run Get-ExecutionPolicy. If it returns Restricted, then run Set-ExecutionPolicy AllSigned or Set-ExecutionPolicy Bypass -Scope Process.
     >> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
@@ -88,11 +89,11 @@ pip install pyqtgraph
 pip install pyaudio
 ```
 If `pip` is not found try using `python -m pip install` instead.
-Pyaudio package may fail so you can download the pyaudio directly to path C:\Users\YOUR_COMP\AppData\Local\Programs\Python\Python37-32 and open cmd there and run 
->> pip install PyAudio-0.2.11-cp36-cp36m-win_amd64.whl
+Pyaudio package may fail so you can download the pyaudio directly to path C:\Users\YOUR_COMP\AppData\Local\Programs\Python\Python37-32 and open cmd there and run. 
+>> pip install PyAudio-0.2.11-cp36-cp36m-win_amd64.whl  .
 
 Ensure all dependencies are installed by running >> pip list
-This should return like this
+This should return like this  >>
 numpy (1.18.4)
 pip (9.0.1)
 PyAudio (0.2.11)
