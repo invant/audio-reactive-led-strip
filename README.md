@@ -23,7 +23,7 @@ The repository includes everything needed to build an LED strip music visualizer
 # What do I need to make one?
 ## Computer + ESP8266
 To build a visualizer using a computer and ESP8266, you will need:
-- Computer with Python 3.6 strictly as new version doesn't support some of the dependencies, python needs to be installed to path to execute commands through powershell so better install python through Chocolatey. Installing python 3.6 through choco further explained.
+- Computer with Python 3.6 strictly as new version doesn't support some of the dependencies, Python needs to be installed to path to execute commands through powershell so better install python through Chocolatey. Installing python 3.6 through choco is further explained.
 - ESP8266 module with RX1 pin exposed. These modules can be purchased for as little as $5 USD. These modules are known to be compatible, but many others will work too:
   - NodeMCU v3
   - Adafruit HUZZAH
@@ -94,11 +94,12 @@ pip install pyqtgraph
 pip install pyaudio
 ```
 If `pip` is not found try using `python -m pip install` instead.
-Pyaudio package may fail so you can download the pyaudio directly to path C:\Users\YOUR_COMP\AppData\Local\Programs\Python\Python37-32 and open cmd there and run. 
+<!-- Pyaudio package may fail so you can download the pyaudio directly to path `C:\Users\YOUR_COMP\AppData\Local\Programs\Python\Python37-32` and open cmd there and run. 
+-->
 
 ```pip install PyAudio-0.2.11-cp36-cp36m-win_amd64.whl```
 
-Ensure all dependencies are installed by running >> pip list
+Ensure all dependencies are installed by running `pip list`
 This should return like this:
 ```
 numpy (1.18.4)
