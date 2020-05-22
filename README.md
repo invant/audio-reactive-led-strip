@@ -91,9 +91,8 @@ If `pip` is not found try using `python -m pip install` instead.
 Pyaudio package may fail so you can download the pyaudio directly to path C:\Users\YOUR_COMP\AppData\Local\Programs\Python\Python37-32 and open cmd there and run 
 >> pip install PyAudio-0.2.11-cp36-cp36m-win_amd64.whl
 
-Ensure all dependencies are installed by running the following command 
->> pip list
- This should return like this
+Ensure all dependencies are installed by running >> pip list
+This should return like this
 numpy (1.18.4)
 pip (9.0.1)
 PyAudio (0.2.11)
